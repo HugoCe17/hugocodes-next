@@ -28,19 +28,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
 
   return (
-    <div className="h-full bg-gray-100">
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
-      <div className="h-full">
+    <>
+      <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -91,6 +83,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                     </button>
                   </div>
                 </Transition.Child>
+
                 <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
                   <div className="flex flex-shrink-0 items-center px-4">
                     <img
@@ -128,14 +121,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 <div className="flex flex-shrink-0 bg-gray-700 p-4">
                   <a href="#" className="group block flex-shrink-0">
                     <div className="flex items-center">
-                      <img
-                        className="inline-block h-10 w-10 rounded-full"
-                        src="https://imgs.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
+                      <div>
+                        <img
+                          className="inline-block h-10 w-10 rounded-full"
+                          src="https://avatars.githubusercontent.com/u/1256596?v=4"
+                          alt=""
+                        />
+                      </div>
                       <div className="ml-3">
                         <p className="text-base font-medium text-white">
-                          Tom Cook
+                          Hugo Cedano
                         </p>
                         <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
                           View profile
@@ -196,12 +191,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   <div>
                     <img
                       className="inline-block h-9 w-9 rounded-full"
-                      src="https://imgs.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="https://avatars.githubusercontent.com/u/1256596?v=4"
                       alt=""
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-white">Tom Cook</p>
+                    <p className="text-sm font-medium text-white">
+                      Hugo Cedano
+                    </p>
                     <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
                       View profile
                     </p>
@@ -224,18 +221,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </div>
           <main className="flex-1">
             <div className="py-6">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">
-                  Dashboard
-                </h1>
-              </div>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <Component {...pageProps} />
-              </div>
+              <Component {...pageProps} />
             </div>
           </main>
         </div>
       </div>
-    </div>
+    </>
   )
 }
