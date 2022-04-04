@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import { Fragment, useState } from 'react'
 import type { AppProps } from 'next/app'
-// import img from 'next/img'
+// import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import {
   CalendarIcon,
@@ -13,6 +13,7 @@ import {
   UsersIcon,
   XIcon,
 } from '@heroicons/react/outline'
+import ProfileSidebar from '@/components/ProfileSidebar'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -22,10 +23,6 @@ const navigation = [
   { name: 'Documents', href: '#', icon: InboxIcon, current: false },
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
 ]
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
@@ -83,62 +80,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                     </button>
                   </div>
                 </Transition.Child>
-
-                <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-                  <div className="flex flex-shrink-0 items-center px-4">
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                      alt="Workflow"
-                    />
-                  </div>
-                  <nav className="mt-5 space-y-1 px-2">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'group flex items-center rounded-md px-2 py-2 text-base font-medium'
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            item.current
-                              ? 'text-gray-300'
-                              : 'text-gray-400 group-hover:text-gray-300',
-                            'mr-4 h-6 w-6 flex-shrink-0'
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-                <div className="flex flex-shrink-0 bg-gray-700 p-4">
-                  <a href="#" className="group block flex-shrink-0">
-                    <div className="flex items-center">
-                      <div>
-                        <img
-                          className="inline-block h-10 w-10 rounded-full"
-                          src="https://avatars.githubusercontent.com/u/1256596?v=4"
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-base font-medium text-white">
-                          Hugo Cedano
-                        </p>
-                        <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
-                          View profile
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                <ProfileSidebar navigation={navigation} />
               </div>
             </Transition.Child>
             <div className="w-14 flex-shrink-0">
@@ -147,83 +89,34 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </Dialog>
         </Transition.Root>
 
-        {/* Static sidebar for desktop */}
-        <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
-            <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-              <div className="flex flex-shrink-0 items-center px-4">
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                  alt="Workflow"
-                />
+        <div className="flex">
+          {/* Static sidebar for desktop */}
+          <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+            {/* Right Profile Details */}
+            <ProfileSidebar navigation={navigation} />
+          </div>
+          {/* center content */}
+          <div className="flex flex-1 flex-col md:pl-64">
+            <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
+              <button
+                type="button"
+                className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                onClick={() => setSidebarOpen(true)}
+              >
+                <span className="sr-only">Open sidebar</span>
+                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <main className="flex-1">
+              <div className="py-6">
+                <Component {...pageProps} />
               </div>
-              <nav className="mt-5 flex-1 space-y-1 px-2">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-                    )}
-                  >
-                    <item.icon
-                      className={classNames(
-                        item.current
-                          ? 'text-gray-300'
-                          : 'text-gray-400 group-hover:text-gray-300',
-                        'mr-3 h-6 w-6 flex-shrink-0'
-                      )}
-                      aria-hidden="true"
-                    />
-                    {item.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
-            <div className="flex flex-shrink-0 bg-gray-700 p-4">
-              <a href="#" className="group block w-full flex-shrink-0">
-                <div className="flex items-center">
-                  <div>
-                    <img
-                      className="inline-block h-9 w-9 rounded-full"
-                      src="https://avatars.githubusercontent.com/u/1256596?v=4"
-                      alt=""
-                    />
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-white">
-                      Hugo Cedano
-                    </p>
-                    <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                      View profile
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
+            </main>
           </div>
-        </div>
-        <div className="flex flex-1 flex-col md:pl-64">
-          <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
-            <button
-              type="button"
-              className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <span className="sr-only">Open sidebar</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
+          {/* Left Profile Menu */}
+          <div className="flex h-screen flex-col">
+            <ProfileSidebar navigation={navigation} />
           </div>
-          <main className="flex-1">
-            <div className="py-6">
-              <Component {...pageProps} />
-            </div>
-          </main>
         </div>
       </div>
     </>
