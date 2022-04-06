@@ -1,17 +1,39 @@
-import { Fragment, useState, ReactNode } from 'react'
-import type { AppProps } from 'next/app'
+import Image from 'next/image'
+import { CheckIcon } from '@heroicons/react/solid'
+import CircularProgress from './CircularProgress'
 
-import {
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  MenuIcon,
-  UsersIcon,
-  XIcon,
-} from '@heroicons/react/outline'
-import { classNames } from '@/util/index'
+const languages: any = { English: 99, Spanish: 82 }
+const skills: any = {
+  html: 75,
+  css: 62,
+  javascript: 83,
+  node: 70,
+  // react: 74,
+  // vue: 88,
+}
+const technologies: any = {
+  frontend: ['React', 'Vue', 'Sass'],
+  backend: ['Node', 'Express', 'GraphQL', 'Mongo', 'SQL'],
+  testing: ['Jest', 'Mocha', 'Chai', 'Cypress'],
+  frameworks: ['Nuxt.js', 'Next.js'],
+  web3: ['Web3', 'Ethers', 'Solidity', 'Truffle', 'Hardhat', 'Ganache'],
+  other: ['Git', 'Linux', 'Docker', 'AWS'],
+}
+
+type SkillProgressBarType = { label: string; value: number }
+function SkillProgressBar({ label, value }: SkillProgressBarType) {
+  return (
+    <div className="flex w-full flex-shrink flex-col">
+      <div className="my-1 flex justify-between">
+        <div className="text-sm leading-7">{label}</div>
+        <div className="text-sm leading-7">{value}%</div>
+      </div>
+      <div className="flex h-1 bg-slate-200">
+        <div className="h-1 bg-amber-400" style={{ width: value + '%' }}></div>
+      </div>
+    </div>
+  )
+}
 
 export type NavigationItem = {
   name: string
@@ -19,67 +41,95 @@ export type NavigationItem = {
   current: boolean
   icon: any
 }
-
-type Props = {
-  navigation: NavigationItem[]
-}
-
-export default function ProfileSidebar(props: Props) {
-  const { navigation } = props
+type ProfileSidebarProps = {}
+export default function ProfileSidebar(props: ProfileSidebarProps) {
   return (
-    <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
-      <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-        <div className="flex flex-shrink-0 items-center px-4">
-          <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-            alt="Workflow"
-          />
-        </div>
-        <nav className="mt-5 flex-1 space-y-1 px-2">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.current
-                  ? 'bg-gray-900 text-white'
-                  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-              )}
-            >
-              <item.icon
-                className={classNames(
-                  item.current
-                    ? 'text-gray-300'
-                    : 'text-gray-400 group-hover:text-gray-300',
-                  'mr-3 h-6 w-6 flex-shrink-0'
-                )}
-                aria-hidden="true"
-              />
-              {item.name}
-            </a>
-          ))}
-        </nav>
-      </div>
-      <div className="flex flex-shrink-0 bg-gray-700 p-4">
-        <a href="#" className="group block w-full flex-shrink-0">
-          <div className="flex items-center">
-            <div>
-              <img
-                className="inline-block h-9 w-9 rounded-full"
-                src="https://avatars.githubusercontent.com/u/1256596?v=4"
-                alt=""
-              />
-            </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium text-white">Hugo Cedano</p>
-              <p className="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                View profile
-              </p>
+    <div className="flex  flex-1 flex-col bg-slate-900">
+      <div className="flex flex-1 flex-col">
+        <div className="flex flex-shrink-0 flex-col items-center">
+          <div className="flex w-full flex-col items-center justify-center bg-slate-700 p-5">
+            <Image
+              className="rounded-full"
+              src="https://avatars.githubusercontent.com/u/1256596?v=4"
+              height="100"
+              width="100"
+              layout="fixed"
+              alt=""
+            />
+            <div className="flex flex-col items-center justify-center text-sm">
+              <label className="text-slate-200">Hugo Cedano</label>
+              <label className="text-slate-400">Fullstack</label>
+              <label className="text-slate-400">Web 2.5 </label>
             </div>
           </div>
-        </a>
+          <div className="flex w-full flex-col divide-y divide-slate-700 px-5">
+            <div className="flex w-full flex-col py-5">
+              <div className="flex items-center justify-between">
+                <label htmlFor="residence" className="text-slate-200">
+                  Residence
+                </label>
+                <span className="text-sm text-slate-400">Alabama, US</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <label htmlFor="residence" className="text-slate-200">
+                  City
+                </label>
+                <span className="text-sm text-slate-400">Deatsville</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <label htmlFor="residence" className="text-slate-200">
+                  Age
+                </label>
+                <span className="text-sm text-slate-400">32</span>
+              </div>
+            </div>
+            <div className="flex w-full flex-col py-5">
+              <label htmlFor="residence" className="text-slate-200">
+                Bilingual
+              </label>
+              <ol className="mt-1 flex list-none items-center justify-evenly text-sm text-slate-400">
+                {Object.keys(languages).map((lan, i) => (
+                  <li key={i} className="flex flex-col items-center leading-6">
+                    <CircularProgress value={languages[lan]} />
+                    {lan}
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="flex w-full flex-col justify-center py-5">
+              <label htmlFor="residence" className="text-slate-200">
+                Coding
+              </label>
+              <ol className="flex list-none flex-col justify-evenly text-sm text-slate-400">
+                {Object.keys(skills).map((skill, i) => {
+                  return (
+                    <SkillProgressBar
+                      key={i}
+                      label={skill}
+                      value={skills[skill]}
+                    ></SkillProgressBar>
+                  )
+                })}
+              </ol>
+            </div>
+            <div className="flex flex-col py-5">
+              <label htmlFor="knowledge" className="text-slate-200">
+                Knowledge
+              </label>
+              <ol className="flex list-none flex-col justify-between text-sm text-slate-400 ">
+                {Object.keys(technologies).map((kind: any, i) => (
+                  <li
+                    key={i}
+                    className="group mt-1 flex  text-sm leading-6 text-slate-400"
+                  >
+                    <CheckIcon className="mr-2 h-5 w-5  flex-shrink-0 text-amber-400" />
+                    {technologies[kind].join(', ')}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

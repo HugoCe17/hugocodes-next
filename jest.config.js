@@ -11,10 +11,17 @@ const customJestConfig = {
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/components/(.*)$': '<rootDir>/components/$1',
-
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
+    '^@/util/(.*)$': '<rootDir>/util/$1',
+    '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
+  collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      lines: 90,
+    },
+  },
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
