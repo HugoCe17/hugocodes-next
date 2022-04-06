@@ -30,7 +30,7 @@ export default function NavigationSidebar(props: Props) {
   const [docked, setDocked] = useState(true)
 
   return (
-    <div className="flex h-full flex-1 flex-col bg-slate-900">
+    <div className="flex h-full  flex-col bg-slate-900">
       <div className="sticky top-0 z-10 bg-slate-900">
         <button
           type="button"
@@ -44,7 +44,7 @@ export default function NavigationSidebar(props: Props) {
       <Transition.Root show={docked} as={Fragment}>
         <Dialog
           as="div"
-          className="flex flex-1 items-center bg-slate-900 "
+          className="sticky top-0 z-10 bg-slate-900"
           onClose={setDocked}
         >
           <Transition.Child
@@ -56,79 +56,37 @@ export default function NavigationSidebar(props: Props) {
             leaveFrom="-translate-x-0"
             leaveTo="translate-x-full"
           >
-            <div className=" fixed right-0 top-5 flex h-full  max-w-xs bg-slate-900">
-              <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-                <nav className="mt-5 flex-1 space-y-1 px-4">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? 'bg-slate-900 text-white'
-                          : 'text-slate-300 hover:bg-slate-700 hover:text-white',
-                        'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-                      )}
-                    >
-                      <item.icon
-                        className={classNames(
-                          item.current
-                            ? 'text-slate-300'
-                            : 'text-slate-400 group-hover:text-slate-300',
-                          'mr-3 h-6 w-6 flex-shrink-0'
-                        )}
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </nav>
-              </div>{' '}
-            </div>
-          </Transition.Child>
-          <div className="w-14 flex-shrink-0"></div>
-        </Dialog>
-      </Transition.Root>
-
-      {/* <Transition
-          as={Fragment}
-          show={docked}
-          enter="ease-in-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in-out duration-300"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-            <div className="h-full w-full rounded-md bg-white shadow-lg" />
-            <nav className="mt-5 flex-1 space-y-1 px-2">
-            {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? 'bg-slate-900 text-white'
-                      : 'text-slate-300 hover:bg-slate-700 hover:text-white',
-                    'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
-                  )}
-                >
-                  <item.icon
+            <div className="fixed top-5 right-0 flex h-full max-w-xs bg-slate-900">
+              <nav className="mt-5 h-full space-y-1 px-4">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
                     className={classNames(
                       item.current
-                        ? 'text-slate-300'
-                        : 'text-slate-400 group-hover:text-slate-300',
-                      'mr-3 h-6 w-6 flex-shrink-0'
+                        ? 'bg-slate-900 text-white'
+                        : 'text-slate-300 hover:bg-slate-700 hover:text-white',
+                      'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
                     )}
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </Transition> */}
+                  >
+                    <item.icon
+                      className={classNames(
+                        item.current
+                          ? 'text-slate-300'
+                          : 'text-slate-400 group-hover:text-slate-300',
+                        'mr-3 h-6 w-6 flex-shrink-0'
+                      )}
+                      aria-hidden="true"
+                    />
+                    {item.name}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </Transition.Child>
+          {/* <div className="w-14 flex-shrink-0"></div> */}
+        </Dialog>
+      </Transition.Root>
     </div>
   )
 }

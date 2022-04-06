@@ -1,15 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
-    <div className=" flex h-full flex-1 flex-col items-center justify-center py-2">
+    <div className="flex h-full flex-1 flex-col items-center justify-center py-2">
       <Head>
         <title>hugocodes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className="flex w-full flex-1 flex-col items-center text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
