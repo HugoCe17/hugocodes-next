@@ -38,7 +38,7 @@ exports[`renders homepage unchanged 1`] = `
         Get started by editing
          
         <code
-          class="rounded-md bg-slate-800 p-3 font-mono text-lg"
+          class="bg-slate-800 p-3 font-mono text-lg"
         >
           pages/index.tsx
         </code>

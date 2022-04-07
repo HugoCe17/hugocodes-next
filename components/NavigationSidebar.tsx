@@ -40,7 +40,7 @@ export default function NavigationSidebar(props: Props) {
   return (
     <div
       className={classNames(
-        'flex h-full  flex-1 flex-col rounded-lg bg-slate-800 p-2 shadow-md shadow-slate-800 md:divide-y md:divide-slate-700  '
+        'flex h-full  flex-1 flex-col bg-slate-800 p-2 shadow-md shadow-slate-800 md:divide-y md:divide-slate-700  '
       )}
     >
       <div className={classNames('sticky top-0 z-10 hidden md:flex')}>
@@ -84,7 +84,7 @@ export default function NavigationSidebar(props: Props) {
                     item.current
                       ? 'bg-slate-800 text-white'
                       : 'text-slate-300 hover:bg-slate-700 hover:text-white',
-                    'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
+                    'group flex items-center px-2 py-2 text-sm font-medium'
                   )}
                 >
                   <item.icon
