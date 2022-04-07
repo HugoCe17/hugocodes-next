@@ -3,11 +3,23 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div
-    class="flex h-full flex-1 flex-col items-center justify-center py-2"
+    class=" flex h-full flex-col items-center justify-center"
   >
     <main
       class="flex w-full flex-1 flex-col items-center text-center"
     >
+      <video
+        autoplay=""
+        class="-z-10 h-full w-full"
+        loop=""
+        playsinline=""
+        preload="false"
+      >
+        <source
+          src="/ferry-ride.mp4"
+          type="video/mp4"
+        />
+      </video>
       <h1
         class="text-6xl font-bold"
       >
