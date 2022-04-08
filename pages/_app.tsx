@@ -93,7 +93,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Transition.Root show={navbarOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="absolute top-0 right-0 z-40 flex md:hidden"
+            className="absolute top-0 right-0 z-40 flex h-full  md:hidden"
             onClose={setNavbarOpen}
           >
             <Transition.Child
@@ -149,7 +149,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <div className="sticky top-0 z-10 flex w-full justify-between bg-slate-900 md:hidden">
           <button
             type="button"
-            className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-slate-300 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="app-button"
             onClick={() => setSidebarOpen(true)}
           >
             <span className="sr-only">Open sidebar</span>
@@ -157,7 +157,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
           <button
             type="button"
-            className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-slate-300 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="app-button"
             onClick={() => setNavbarOpen(true)}
           >
             <span className="sr-only">Open sidebar</span>
@@ -165,19 +165,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
         </div>
 
-        <div className="sticky top-0 flex h-full flex-1 p-5">
-          <div className="hidden py-5  md:absolute md:inset-y-0 md:flex md:w-72 md:flex-col">
+        <div className=" flex h-screen p-5 ">
+          <div className="hidden   md:relative md:inset-y-0 md:flex md:flex-col">
             <ProfileSidebar />
           </div>
 
-          <div className="flex">
-            <main className="  flex flex-1 items-start md:pl-72">
-              <div className=" w-full  p-5">
-                <Component {...pageProps} />
-              </div>
+          <div className="flex ">
+            <main className=" h-full overflow-y-auto p-5">
+              <Component {...pageProps} />
             </main>
 
-            <div className=" hidden md:relative  md:flex  md:flex-col">
+            <div className=" hidden   md:relative md:flex  md:flex-col">
               <NavigationSidebar navigation={navigation} />
             </div>
           </div>

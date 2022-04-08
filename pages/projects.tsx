@@ -1,63 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
-const posts = [
-  {
-    title: 'In the beginning',
-    href: '#',
-    category: { name: 'Sapient 2015', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '6 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-]
+import posts from '@/fixtures/projects'
 
 const Projects: NextPage = () => {
   return (
-    <div className=" flex h-full  flex-col items-center justify-center">
+    <div className=" flex flex-col items-center justify-center ">
       <Head>
         <title>hugocodes - projects</title>
         <link rel="icon" href="/favicon.ico" />
