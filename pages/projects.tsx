@@ -4,7 +4,7 @@ import posts from '@/fixtures/projects'
 
 const Projects: NextPage = () => {
   return (
-    <div className=" flex flex-col items-center justify-center ">
+    <div className="">
       <Head>
         <title>hugocodes - projects</title>
         <link rel="icon" href="/favicon.ico" />

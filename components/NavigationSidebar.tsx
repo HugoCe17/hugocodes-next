@@ -40,7 +40,7 @@ export default function NavigationSidebar(props: Props) {
   return (
     <div
       className={classNames(
-        'flex h-full  flex-1 flex-col bg-slate-800 p-2 shadow-md shadow-slate-800 md:divide-y md:divide-slate-700  '
+        'flex h-full  flex-1 flex-col bg-slate-800 p-2 md:divide-y md:divide-slate-700  '
       )}
     >
       <div className={classNames('sticky top-0 z-10 hidden md:flex')}>

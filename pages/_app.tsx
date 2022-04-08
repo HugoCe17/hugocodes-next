@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className="h-full">
+      <div className="">
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -93,7 +93,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Transition.Root show={navbarOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="absolute top-0 right-0 z-40 flex h-full  md:hidden"
+            className="absolute top-0 right-0 z-40 flex   md:hidden"
             onClose={setNavbarOpen}
           >
             <Transition.Child
@@ -165,19 +165,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
         </div>
 
-        <div className=" flex h-screen p-5 ">
-          <div className="hidden   md:relative md:inset-y-0 md:flex md:flex-col">
+        <div className=" flex ">
+          <div className="hidden  md:absolute md:flex md:w-72 md:flex-col">
             <ProfileSidebar />
           </div>
 
-          <div className="flex ">
-            <main className=" h-full overflow-y-auto p-5">
-              <Component {...pageProps} />
-            </main>
+          <main className="md:relative md:flex md:pl-72 ">
+            <Component {...pageProps} />
+          </main>
 
-            <div className=" hidden   md:relative md:flex  md:flex-col">
-              <NavigationSidebar navigation={navigation} />
-            </div>
+          <div className=" hidden   md:relative md:flex md:flex-col">
+            <NavigationSidebar navigation={navigation} />
           </div>
         </div>
       </div>

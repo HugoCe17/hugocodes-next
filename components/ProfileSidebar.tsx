@@ -44,7 +44,7 @@ export type NavigationItem = {
 type ProfileSidebarProps = {}
 export default function ProfileSidebar(props: ProfileSidebarProps) {
   return (
-    <div className="z-50 flex flex-1 flex-col  bg-slate-800 shadow-md shadow-slate-800 md:w-72">
+    <div className="z-50 flex flex-1 flex-col  bg-slate-800  md:w-72">
       <div className="flex flex-1 flex-col  ">
         <div className="flex flex-shrink-0 flex-col items-center  ">
           <div className="flex w-full flex-col items-center justify-center bg-slate-700  p-5 ">

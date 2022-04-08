@@ -3,7 +3,7 @@ import Head from 'next/head'
 import ProfileVideo from '@/components/ProfileVideo'
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="">
       <Head>
         <title>hugocodes</title>
         <link rel="icon" href="/favicon.ico" />

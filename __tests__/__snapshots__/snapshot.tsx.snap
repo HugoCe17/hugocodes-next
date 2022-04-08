@@ -3,10 +3,10 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div
-    class=" flex h-full flex-col items-center justify-center"
+    class=""
   >
     <main
-      class="flex w-full flex-1 flex-col items-center text-center"
+      class="flex flex-col items-center"
     >
       <video
         autoplay=""
