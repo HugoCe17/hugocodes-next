@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html className="flex justify-center bg-slate-900  text-slate-300">
       <Head />
-      <body className=" max-w-screen-2xl  overflow-y-auto">
+      <body className=" max-w-screen-2xl">
         <Main />
         <NextScript />
       </body>

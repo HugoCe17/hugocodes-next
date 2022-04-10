@@ -171,7 +171,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </div>
 
           <div className="flex h-screen md:p-5">
-            <main className=" overflow-y-auto md:relative md:flex md:px-5 md:pl-72">
+            <main className=" md:relative md:flex md:overflow-y-auto md:px-5 md:pl-72">
               <Component {...pageProps} />
             </main>
             <div className="hidden h-full md:relative md:flex md:flex-col">
