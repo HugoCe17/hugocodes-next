@@ -170,7 +170,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <ProfileSidebar />
           </div>
 
-          <div className="flex h-screen md:p-5">
+          <div className="flex h-screen md:py-5 md:pl-5">
             <main className=" md:relative md:flex md:overflow-y-auto md:px-5 md:pl-72">
               <Component {...pageProps} />
             </main>
