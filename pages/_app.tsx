@@ -165,17 +165,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
         </div>
 
-        <div className=" flex ">
-          <div className="hidden  md:absolute md:flex md:w-72 md:flex-col">
+        <div className="flex">
+          <div className="hidden h-full py-5 md:absolute md:flex md:w-64 md:flex-col">
             <ProfileSidebar />
           </div>
 
-          <main className="md:relative md:flex md:pl-72 ">
-            <Component {...pageProps} />
-          </main>
-
-          <div className=" hidden   md:relative md:flex md:flex-col">
-            <NavigationSidebar navigation={navigation} />
+          <div className="flex h-screen md:p-5">
+            <main className=" overflow-y-auto md:relative md:flex md:px-5 md:pl-72">
+              <Component {...pageProps} />
+            </main>
+            <div className="hidden h-full md:relative md:flex md:flex-col">
+              <NavigationSidebar navigation={navigation} />
+            </div>
           </div>
         </div>
       </div>

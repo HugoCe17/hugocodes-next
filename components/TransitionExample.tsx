@@ -23,13 +23,12 @@ export default function Example() {
             <div className="h-full w-full rounded-md bg-red-500 shadow-lg" />
           </Transition>
         </div>
-
         <button
+          className="backface-visibility-hidden mt-8 flex transform items-center rounded-full bg-black bg-opacity-20 px-3 py-2 text-sm font-medium text-white transition hover:scale-105 hover:bg-opacity-30 focus:outline-none active:bg-opacity-40"
           onClick={() => {
             setIsShowing(false)
             resetIsShowing()
           }}
-          className="backface-visibility-hidden mt-8 flex transform items-center rounded-full bg-black bg-opacity-20 px-3 py-2 text-sm font-medium text-white transition hover:scale-105 hover:bg-opacity-30 focus:outline-none active:bg-opacity-40"
         >
           <svg viewBox="0 0 20 20" fill="none" className="h-5 w-5 opacity-70">
             <path
@@ -38,7 +37,6 @@ export default function Example() {
               strokeWidth="1.5"
             />
           </svg>
-
           <span className="ml-3">Click to transition</span>
         </button>
       </div>

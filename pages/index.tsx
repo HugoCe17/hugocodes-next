@@ -10,7 +10,6 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex flex-col items-center">
         <ProfileVideo src="/ferry-ride.mp4" />
-
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">

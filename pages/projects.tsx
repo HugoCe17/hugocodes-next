@@ -4,7 +4,7 @@ import posts from '@/fixtures/projects'
 
 const Projects: NextPage = () => {
   return (
-    <div className="">
+    <div className=" h-full">
       <Head>
         <title>hugocodes - projects</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +27,7 @@ const Projects: NextPage = () => {
               {posts.map((post) => (
                 <div
                   key={post.title}
-                  className="flex flex-col overflow-hidden rounded-lg  shadow-lg shadow-slate-800"
+                  className="flex flex-col overflow-hidden  shadow-lg shadow-slate-800"
                 >
                   <div className="flex-shrink-0">
                     <img
