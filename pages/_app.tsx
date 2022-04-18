@@ -93,7 +93,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Transition.Root show={navbarOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="absolute top-0 right-0 z-40 flex   md:hidden"
+            className="fixed top-0 right-0 z-40 flex md:hidden"
             onClose={setNavbarOpen}
           >
             <Transition.Child

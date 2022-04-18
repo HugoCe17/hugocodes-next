@@ -23,7 +23,7 @@ const Projects: NextPage = () => {
                 Here & There...
               </p>
             </div>
-            <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+            <div className="mx-auto grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
               {posts.map((post) => (
                 <div
                   key={post.title}
