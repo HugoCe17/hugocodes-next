@@ -4,13 +4,13 @@ import posts from '@/fixtures/projects'
 
 const Projects: NextPage = () => {
   return (
-    <div className=" h-full">
+    <div className="">
       <Head>
         <title>hugocodes - projects</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex w-full flex-1 flex-col items-center text-center">
-        <div className="bg-slate-50- relative">
+      <main className="flex flex-col items-center text-center">
+        <div className="bg-slate-50- relative ">
           {/* <div className="absolute inset-0">
             <div className="h-1/3 bg-slate-700 sm:h-2/3" />
           </div> */}
@@ -27,7 +27,7 @@ const Projects: NextPage = () => {
               {posts.map((post) => (
                 <div
                   key={post.title}
-                  className="flex flex-col overflow-hidden  shadow-lg shadow-slate-800"
+                  className="flex   flex-col  overflow-hidden  shadow-lg shadow-slate-800"
                 >
                   <div className="flex-shrink-0">
                     <img

@@ -146,7 +146,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </Dialog>
         </Transition.Root>
 
-        <div className="sticky top-0 z-10 flex w-full justify-between bg-slate-900 md:hidden">
+        <div className="sticky top-0 z-10 flex w-screen justify-between bg-slate-900 md:hidden">
           <button
             type="button"
             className="app-button"
@@ -165,13 +165,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </button>
         </div>
 
-        <div className="flex">
+        <div className="flex w-full">
           <div className="hidden h-full py-5 md:absolute md:flex md:w-64 md:flex-col">
             <ProfileSidebar />
           </div>
 
-          <div className="flex h-screen md:py-5 md:pl-5">
-            <main className=" md:relative md:flex md:overflow-y-auto md:px-5 md:pl-72">
+          <div className="flex h-screen w-full md:py-5 md:pl-5">
+            <main className=" w-full md:relative md:flex md:overflow-y-auto md:px-5 md:pl-72">
               <Component {...pageProps} />
             </main>
             <div className="hidden h-full md:relative md:flex md:flex-col">
