@@ -3,7 +3,7 @@ type ProfileProps = { src: string }
 export default function ProfileVideo(props: ProfileProps) {
   return (
     <video
-      preload="false"
+      preload="true"
       playsInline
       autoPlay
       muted

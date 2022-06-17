@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { CheckIcon } from '@heroicons/react/solid'
 import CircularProgress from './CircularProgress'
 
-const languages: any = { English: 99, Spanish: 82 }
+const languages: any = { English: 90, Spanish: 82 }
 const skills: any = {
   html: 75,
   css: 62,
@@ -33,6 +33,10 @@ function SkillProgressBar({ label, value }: SkillProgressBarType) {
       </div>
     </div>
   )
+}
+
+function loadResume() {
+  window.open('/resume.pdf')
 }
 
 export type NavigationItem = {
@@ -126,6 +130,47 @@ export default function ProfileSidebar(props: ProfileSidebarProps) {
                     {technologies[kind].join(', ')}
                   </li>
                 ))}
+              </ol>
+            </div>
+            <div className="flex flex-col space-y-1 py-5">
+              <label htmlFor="more" className="text-slate-200">
+                More
+              </label>
+              <ol className="flex list-none flex-col justify-between text-sm text-slate-400 ">
+                <li>
+                  <a
+                    className="text-white-600"
+                    href="https://github.com/HugoCe17"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white-600"
+                    href="https://www.linkedin.com/in/hceda17/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <button className="text-white-600" onClick={loadResume}>
+                    Resume
+                  </button>
+                </li>
+                {/* {Object.keys(technologies).map((kind: any, i) => (
+                  <li
+                    key={i}
+                    className="group mt-1 flex  text-sm leading-6 text-slate-400"
+                  >
+                    <CheckIcon className="mr-2 h-5 w-5  flex-shrink-0 text-amber-400" />
+                    {technologies[kind].join(', ')}
+                  </li>
+                ))} */}
               </ol>
             </div>
           </div>

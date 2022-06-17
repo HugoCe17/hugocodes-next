@@ -1,3 +1,6 @@
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 import '../styles/globals.css'
 import { Fragment, useState } from 'react'
 import type { AppProps } from 'next/app'
@@ -20,10 +23,10 @@ import NavigationSidebar from '@/components/NavigationSidebar'
 const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'Projects', href: '/projects', icon: FolderIcon, current: false },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+  // { name: 'Resume', href: '/resume', icon: InboxIcon, current: false },
+  // { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
+  // { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+  // { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
 ]
 
 export default function MyApp({ Component, pageProps }: AppProps) {

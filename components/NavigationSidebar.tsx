@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
   CalendarIcon,

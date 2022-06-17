@@ -1,154 +1,56 @@
 const projects = [
   {
-    title: 'In the beginning',
-    href: '#',
-    category: { name: 'Sapient 2015', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '6 min',
+    title: 'Le Landing',
+    href: 'https://www.ciphershooters.io/',
+    category: {
+      name: 'CipherShooters',
+      href: 'https://www.ciphershooters.io/',
+    },
+    description: 'Oversaw development and deployed',
+    date: 'Aug 08, 2021',
+    datetime: '2021-08-1',
+    imageUrl: '/ciphershooters_landing.png',
+    readingTime: '5 min',
     author: {
       name: 'Hugo Cedano',
-      href: '#',
+      href: 'https://github.com/HugoCe17',
       imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
     },
   },
   {
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
+    title: 'Decentralized Application',
+    href: 'https://app.ciphershooters.io/',
+    category: {
+      name: 'CipherShooters',
+      href: 'https://app.ciphershooters.io/',
+    },
+    description: 'Cyberpunk RPG Battler on Polygon ',
+    date: 'Aug 1, 2021',
+    datetime: '2021-09-1',
+    imageUrl: '/ciphershooters_app.png',
+    readingTime: 'TBD',
     author: {
       name: 'Hugo Cedano',
-      href: '#',
+      href: 'https://github.com/HugoCe17',
       imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
     },
   },
   {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
+    title: 'Landing',
+    href: 'https://pbs-express.herokuapp.com/',
+    category: {
+      name: 'PBS-Express',
+      href: 'https://pbs-express.herokuapp.com/',
     },
-  },
-  {
-    title: 'In the beginning',
-    href: '#',
-    category: { name: 'Sapient 2015', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '6 min',
+      'A landing as point of contact for boating consultation business',
+    date: 'Jan 31, 2015',
+    datetime: '2021-09-1',
+    imageUrl: '/pbs-express.png',
+    readingTime: 'TBD',
     author: {
       name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'In the beginning',
-    href: '#',
-    category: { name: 'Sapient 2015', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '6 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
-      imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Hugo Cedano',
-      href: '#',
+      href: 'https://github.com/HugoCe17',
       imageUrl: 'https://avatars.githubusercontent.com/u/1256596?v=4',
     },
   },

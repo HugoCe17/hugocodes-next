@@ -4,7 +4,7 @@ import posts from '@/fixtures/projects'
 
 const Projects: NextPage = () => {
   return (
-    <div className=" h-full">
+    <div className="w-full">
       <Head>
         <title>hugocodes - projects</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,7 +20,7 @@ const Projects: NextPage = () => {
                 Projects
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-xl text-slate-500 sm:mt-4">
-                Here & There...
+                WIP...
               </p>
             </div>
             <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
@@ -41,12 +41,19 @@ const Projects: NextPage = () => {
                       <p className="text-sm font-medium text-amber-400">
                         <a
                           href={post.category.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:underline"
                         >
                           {post.category.name}
                         </a>
                       </p>
-                      <a href={post.href} className="mt-2 block">
+                      <a
+                        href={post.href}
+                        className="mt-2 block"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <p className="text-xl font-semibold text-slate-400">
                           {post.title}
                         </p>
@@ -57,7 +64,11 @@ const Projects: NextPage = () => {
                     </div>
                     <div className="mt-6 flex items-center">
                       <div className="flex-shrink-0">
-                        <a href={post.author.href}>
+                        <a
+                          href={post.author.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <span className="sr-only">{post.author.name}</span>
                           <img
                             className="h-10 w-10 rounded-full"
@@ -69,6 +80,8 @@ const Projects: NextPage = () => {
                       <div className="ml-3">
                         <p className="text-sm font-medium text-slate-400">
                           <a
+                            target="_blank"
+                            rel="noopener noreferrer"
                             href={post.author.href}
                             className="hover:underline"
                           >

@@ -23,26 +23,15 @@ exports[`renders homepage unchanged 1`] = `
       <h1
         class="text-6xl font-bold"
       >
-        Welcome to
+        Bienvenidos!
          
         <a
           class="text-blue-600"
-          href="https://nextjs.org"
+          href="https://github.com/HugoCe17"
         >
-          Next.js!
+          Le Github
         </a>
       </h1>
-      <p
-        class="mt-3 text-2xl"
-      >
-        Get started by editing
-         
-        <code
-          class="bg-slate-800 p-3 font-mono text-lg"
-        >
-          pages/index.tsx
-        </code>
-      </p>
     </main>
   </div>
 </div>
